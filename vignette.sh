@@ -20,17 +20,19 @@ wzen () {
 
 # Install Cubism SDK Native if not there
 cache_dir=~/.cache/vignette
-cubism_dir=/var/data/vignette
+install_dir=/usr/lib/vignette
+cubism=CubismSdkForNative-4-r.3
+libcubism=libLive2DCubismCore.so
 
-if [[ ! -f "$cubism_dir/libLive2DCubismCore.so" ]]; then
+if [[ ! -f "$install_dir/$libcubism" ]]; then
   zenity --question --text='Do you accept the <a href="https://www.live2d.com/en/download/cubism-sdk/download-native/">Live2D Proprietary Software License Agreement</a>?' --width=500 || exit 1
   
   mkdir -p "$cache_dir"
   cd "$cache_dir"
 
-  wzen https://cubism.live2d.com/sdk-native/bin/CubismSdkForNative-4-r.3.zip "Cubism SDK for Native (v4-r3)"
-  unzip CubismSdkForNative-4-r.3.zip
-  cp CubismSdkForNative-4-r.3/Core/dll/linux/x86_64/libLive2DCubismCore.so "$cubism_dir/libLive2DCubismCore.so"
+  wzen "https://cubism.live2d.com/sdk-native/bin/$cubism.zip" "Cubism SDK for Native (v4-r3)"
+  unzip "$cubism.zip"
+  cp "$cubism/Core/dll/linux/x86_64/$libcubism" "$install_dir/$libcubism"
   rm -rf CubismSdkForNative-4-r.3*
 fi
 
