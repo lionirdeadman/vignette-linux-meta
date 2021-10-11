@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Downloads stuff from wget, and parses it to obtain an output useful for Zenity.
-download-wget () {
+download_wget () {
   wget "$1" 2>&1 | sed -u "s/.* \([0-9]\+\)%\ \+\([0-9,.]\+.\) \(.*\)/\1\n# Downloading $2\\\\nDownload speed: \2\/s, ETA \3/"
   ret_wget="${PIPESTATUS[0]}"    # get return code of wget
   if [[ "$ret_wget" = 0 ]]; then # check return code for errors
@@ -15,7 +15,7 @@ download-wget () {
 # Gives a Zenity prompt for a wget download, with optional title as a second argument.
 # Function forked from https://askubuntu.com/a/464122.
 wzen () {
-  download-wget "$1" "$2" | zenity --progress --width=500 --title="Downloading $2" --auto-close
+  download_wget "$1" "$2" | zenity --progress --width=500 --title="Downloading $2" --auto-close
 }
 
 # Install Cubism SDK Native if not there
