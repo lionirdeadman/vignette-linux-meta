@@ -19,7 +19,7 @@ wzen () {
 }
 
 # Install Cubism SDK Native if not there
-cache_dir="~/.cache"/vignette
+cache_dir="${XDG_CACHE_HOME-~/.cache}/vignette"
 install_dir=/usr/lib/vignette
 cubism=CubismSdkForNative-4-r.3
 libcubism=libLive2DCubismCore.so
