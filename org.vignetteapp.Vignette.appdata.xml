@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <id type="desktop">org.vignetteapp.Vignette</id>
+  <name>Vignette</name>
+  <developer_name>Vignette Project</developer_name>
+  <summary>Make your streams more virtual</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>NPOSL-3.0</project_license>
+  <url type="homepage">https://vignetteapp.org</url>
+  <icon type="remote" height="256" width="256">https://vignetteapp.org/icon.png</icon>
+  <description>
+    <p>Vignette had one vision; we want to make those who want to start a VTuber career a more accessible path.</p>
+
+    <p>Made for you, by you.</p>
+    <p>And that was our mission: to build a product to make these independent content creators become their own VTubers without using any specialized hardware and relatively low price.</p>
+
+    <p>We won't gather data from you or sell DLCs, or give a half-complete product to you. Vignette and it's entire features will be forever free, no gotchas.*</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://media.discordapp.net/attachments/871618277586132995/896824819159531530/unknown.png</image>
+      <caption>Make your streams more virtual</caption>
+    </screenshot>
+  </screenshots>
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>UserDocs</kudo>
+  </kudos>
+  <categories>
+    <category>InstantMessaging</category>
+    <category>Network</category>
+  </categories>
+  <releases>
+    <release version="Debut" date="2021-10-10"/>
+  </releases>
+  <content_rating type="oars-1.1">
+  </content_rating>
+  <update_contact>flathub_at_thelion.website</update_contact>
+</application>
+

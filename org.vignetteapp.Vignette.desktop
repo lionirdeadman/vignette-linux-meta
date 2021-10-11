@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=Vignette
+Keywords=anime;
+Categories=Utility;
+Exec=Vignette.sh
+Icon=org.vignetteapp.Vignette
