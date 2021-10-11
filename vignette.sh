@@ -24,16 +24,19 @@ install_dir=/usr/lib/vignette
 cubism=CubismSdkForNative-4-r.3
 libcubism=libLive2DCubismCore.so
 
-if [[ ! -f "$install_dir/$libcubism" ]]; then
-  zenity --question --text='Do you accept the <a href="https://www.live2d.com/en/download/cubism-sdk/download-native/">Live2D Proprietary Software License Agreement</a>?' --width=500 || exit 1
+[ -f "$XDG_STATE_HOME" ] && state_home="$XDG_STATE_HOME" || state_home=~/.local/state
+
+if [ ! -f "$install_dir/$libcubism" ] && [ ! -f "$state_home/vignette/$libcubism" ]; then
+  zenity --question --text="It seems like you don't have the Cubism SDK installed on your system, or locally for Vignette.\\nDo you accept the <a href=\"https://www.live2d.com/en/download/cubism-sdk/download-native/\">Live2D Proprietary Software License Agreement</a>?" --width=480 || exit 1
   
   mkdir -p "$cache_dir"
   cd "$cache_dir"
 
   wzen "https://cubism.live2d.com/sdk-native/bin/$cubism.zip" "Cubism SDK for Native (v4-r3)"
   unzip "$cubism.zip"
-  cp "$cubism/Core/dll/linux/x86_64/$libcubism" "$install_dir/$libcubism"
-  rm -rf CubismSdkForNative-4-r.3*
+  mkdir -p "$state_home/vignette"
+  cp "$cubism/Core/dll/linux/x86_64/$libcubism" "$state_home/vignette/$libcubism"
+  rm -rf "$libcubism"
 fi
 
 # Run Vignette (with runtime if present)
