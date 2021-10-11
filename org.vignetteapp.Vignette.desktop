@@ -6,5 +6,5 @@ GenericName=VTuber Toolkit
 Comment=The open source VTuber software toolkit. ❤
 Keywords=anime;vtuber;virtual;face;tracking;
 Categories=Utility;Graphics;
-Exec=Vignette.sh
+Exec=vignette
 Icon=org.vignetteapp.Vignette
