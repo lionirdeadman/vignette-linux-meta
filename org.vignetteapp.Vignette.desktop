@@ -2,7 +2,9 @@
 Type=Application
 Terminal=false
 Name=Vignette
-Keywords=anime;
-Categories=Utility;
+GenericName=VTuber Toolkit
+Comment=The open source VTuber software toolkit. ❤
+Keywords=anime;vtuber;virtual;face;tracking;
+Categories=Utility;Graphics;
 Exec=Vignette.sh
 Icon=org.vignetteapp.Vignette
